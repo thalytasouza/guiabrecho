@@ -11,6 +11,7 @@
 		BC0E4B192B28A80600A3BF8C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E4B182B28A80600A3BF8C /* ContentView.swift */; };
 		BC0E4B1B2B28A80700A3BF8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC0E4B1A2B28A80700A3BF8C /* Assets.xcassets */; };
 		BC0E4B1E2B28A80700A3BF8C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC0E4B1D2B28A80700A3BF8C /* Preview Assets.xcassets */; };
+		BC0E4B272B28B3C700A3BF8C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E4B262B28B3C700A3BF8C /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		BC0E4B182B28A80600A3BF8C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BC0E4B1A2B28A80700A3BF8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC0E4B1D2B28A80700A3BF8C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BC0E4B262B28B3C700A3BF8C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				BC0E4B162B28A80600A3BF8C /* guiabrechoApp.swift */,
 				BC0E4B182B28A80600A3BF8C /* ContentView.swift */,
+				BC0E4B262B28B3C700A3BF8C /* Colors.swift */,
 				BC0E4B1A2B28A80700A3BF8C /* Assets.xcassets */,
 				BC0E4B1C2B28A80700A3BF8C /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC0E4B272B28B3C700A3BF8C /* Colors.swift in Sources */,
 				BC0E4B192B28A80600A3BF8C /* ContentView.swift in Sources */,
 				BC0E4B172B28A80600A3BF8C /* guiabrechoApp.swift in Sources */,
 			);
