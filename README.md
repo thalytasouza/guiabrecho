@@ -1,5 +1,7 @@
 # Guia Brechó
 
+(Em construção)
+
 O "Guia Brechó" é um aplicativo iOS desenvolvido em SwiftUI com o objetivo de encontrar brechós ao redor da cidade do Rio de Janeiro. O projeto atualmente está em fase de desenvolvimento, sendo aprimorado conforme novos conhecimentos vão sendo adquiridos. Um app com a finalidade de facilitar a localização e contato com esses estabelecimentos. 
 
 
