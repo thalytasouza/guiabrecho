@@ -13,6 +13,21 @@ O "Guia Brechó" é um aplicativo iOS desenvolvido em SwiftUI com o objetivo de 
 
 **Visual Atraente:** A interface do usuário é projetada para ser intuitiva e agradável, proporcionando uma experiência visual atraente.
 
+## Frameworks e Bibliotecas
+
+SwiftUI: Utilizado para a construção da interface do usuário de forma declarativa.
+
+MapKit: Integrado para exibir mapas interativos e a localização dos brechós.
+
+
+## Ambiente de Desenvolvimento
+
+Xcode: Ambiente de desenvolvimento integrado (IDE) para criar, testar e depurar o aplicativo.
+
+## Estilo e Design
+
+Color: Paleta de cores personalizada para proporcionar uma experiência visual única.
+
 
 ## Requisitos
 
