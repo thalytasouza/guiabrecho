@@ -41,7 +41,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 8) {
                 Text("GUIA BRECHÓ")
                     .font(.largeTitle)
                     .foregroundColor(minhaCor)
