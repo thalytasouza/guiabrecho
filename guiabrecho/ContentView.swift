@@ -100,10 +100,12 @@ struct ContentView: View {
                         .font(.subheadline)
                     Text(guiabrecho.description ?? "")
                         .foregroundColor(.gray)
+                        .multilineTextAlignment(.leading)
                     Text(guiabrecho.phoneNumber ?? "")
                         .foregroundColor(minhaCor)
                 }
                 .padding()
+                .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Spacer()
             }
