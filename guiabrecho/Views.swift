@@ -32,7 +32,7 @@ struct ContentView: View {
                                     contentViewModel.showFavorites.toggle()
                                 }) {
                                     Image(systemName: "heart.fill")
-                                        .foregroundColor(.blue)
+                                        .foregroundColor(minhaCor)
                                 }
                             )
                     } else {
@@ -44,7 +44,7 @@ struct ContentView: View {
                                     contentViewModel.showFavorites.toggle()
                                 }) {
                                     Image(systemName: "heart.fill")
-                                        .foregroundColor(.blue)
+                                        .foregroundColor(minhaCor)
                                 }
                             )
                     }
@@ -87,7 +87,7 @@ struct ContentView: View {
                 }
                 Spacer()
                 Image(systemName: contentViewModel.isFavorite(id: guiabrecho.id) ? "heart.fill" : "heart")
-                    .foregroundColor(.blue)
+                    .foregroundColor(minhaCor)
                     .onTapGesture {
                         contentViewModel.toggleFavorite(for: guiabrecho.id)
                     }
