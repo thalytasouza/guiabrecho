@@ -10,7 +10,6 @@ struct ContentView: View {
                 if !contentViewModel.showSplash {
                     Text("GUIA BRECHÓ")
                         .font(.title)
-                        .foregroundColor(.black)
                         .frame(maxWidth: .infinity, alignment: .center)
                 }
                 
