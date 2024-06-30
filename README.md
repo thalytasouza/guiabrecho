@@ -4,19 +4,6 @@
 
 O "Guia Brechó" é um aplicativo iOS desenvolvido em SwiftUI com o objetivo de encontrar brechós ao redor da cidade do Rio de Janeiro. O projeto atualmente está em fase de desenvolvimento, sendo aprimorado conforme novos conhecimentos vão sendo adquiridos. Um app com a finalidade de facilitar a localização e contato com esses estabelecimentos. 
 
-## Documentos Importantes
-
-- [Política de Anti-Plágio](./ANTIPLAGIO.md)
-- [Política de Privacidade](./PRIVACIDADE.md)
-
-## Como Contribuir
-
-Estamos felizes em receber contribuições! Por favor, leia nossos [Guidelines de Contribuição](./CONTRIBUTING.md) para saber mais sobre como contribuir.
-
-## Licença
-
-Este projeto está licenciado sob a [MIT License](./LICENSE).
-
 ## Recursos
 
 **Lista de Brechós:** Visualize uma lista de brechós com detalhes como nome, endereço e informações de contato.
@@ -98,4 +85,11 @@ https://github.com/thalytasouza/guiabrecho/assets/113737276/5c69fb04-38f3-4328-a
 
 
 https://github.com/thalytasouza/guiabrecho/assets/113737276/f36455c2-3c16-46bb-a015-c60f10edacac
+
+
+## Documentos Importantes
+
+- [Política de Anti-Plágio](./ANTIPLAGIO.md)
+- [Política de Privacidade](./PRIVACIDADE.md)
+
 
