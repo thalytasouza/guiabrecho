@@ -24,15 +24,28 @@ struct ContentView: View {
                                 }
                             }
                     } else if contentViewModel.showFavorites {
+<<<<<<< HEAD
                         BrechoListView(brechos: BrechoData.all)
                             .environmentObject(contentViewModel)
                             .navigationBarItems(trailing:
                                 NavigationLink(destination: FavoritesView()) {
+=======
+                        FavoritesView(isPresented: $contentViewModel.showFavorites)
+                            .environmentObject(contentViewModel)
+                            .navigationBarItems(trailing:
+                                Button(action: {
+                                    print("Botão de favoritos clicado")
+                                    contentViewModel.showFavorites.toggle()
+                                }) {
+>>>>>>> d48f96205dd1fd1a4264661b35c4da5aee257002
                                     Image(systemName: "heart.fill")
                                         .foregroundColor(minhaCor)
                                 }
                             )
+<<<<<<< HEAD
 
+=======
+>>>>>>> d48f96205dd1fd1a4264661b35c4da5aee257002
                     } else {
                         BrechoListView(brechos: BrechoData.all)
                             .environmentObject(contentViewModel)
@@ -125,6 +138,7 @@ struct ContentView: View {
     
     struct FavoritesView: View {
         @EnvironmentObject var contentViewModel: ContentViewModel
+<<<<<<< HEAD
 
         var body: some View {
             List(contentViewModel.favoriteItems) { item in
@@ -134,6 +148,20 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Meus Favoritos")
+=======
+        @Binding var isPresented: Bool
+        
+        var body: some View {
+            NavigationView {
+                List(contentViewModel.favoriteItems) { item in
+                    NavigationLink(destination: BrechoDetailView(guiabrecho: item)) {
+                        BrechoRow(guiabrecho: item)
+                            .environmentObject(contentViewModel)
+                    }
+                }
+                .navigationBarTitle("Meus Favoritos", displayMode: .inline)
+            }
+>>>>>>> d48f96205dd1fd1a4264661b35c4da5aee257002
         }
     }
 
