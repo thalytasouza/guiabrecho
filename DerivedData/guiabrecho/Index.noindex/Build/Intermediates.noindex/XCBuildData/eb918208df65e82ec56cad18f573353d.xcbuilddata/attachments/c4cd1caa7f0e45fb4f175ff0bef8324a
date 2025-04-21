@@ -1,0 +1,3 @@
+#!/bin/sh
+"${PODS_ROOT}/Target Support Files/Pods-guiabrecho/Pods-guiabrecho-frameworks.sh"
+

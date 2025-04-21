@@ -1,0 +1,90 @@
+{
+  "" : {
+    "dependencies" : "/Users/thalytinha/Documents/guiabrecho/DerivedData/guiabrecho/Index.noindex/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/arm64/FirebaseFirestore-master.d",
+    "diagnostics" : "/Users/thalytinha/Documents/guiabrecho/DerivedData/guiabrecho/Index.noindex/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/arm64/FirebaseFirestore-master.dia",
+    "emit-module-dependencies" : "/Users/thalytinha/Documents/guiabrecho/DerivedData/guiabrecho/Index.noindex/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/arm64/FirebaseFirestore-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/thalytinha/Documents/guiabrecho/DerivedData/guiabrecho/Index.noindex/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/arm64/FirebaseFirestore-master-emit-module.dia",
+    "swift-dependencies" : "/Users/thalytinha/Documents/guiabrecho/DerivedData/guiabrecho/Index.noindex/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/arm64/FirebaseFirestore-master.swiftdeps"
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/AsyncAwait/CollectionReference+AsyncAwait.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/AsyncAwait/Firestore+AsyncAwait.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/CodableErrors.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/CodablePassThroughTypes.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/CollectionReference+WriteEncodable.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/DocumentID.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/DocumentReference+Codable.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/DocumentReference+ReadDecodable.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/DocumentReference+WriteEncodable.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/DocumentSnapshot+ReadDecodable.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/EncoderDecoder.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/ExplicitNull.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/FieldValue+Encodable.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/GeoPoint+Codable.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/ServerTimestamp.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/Timestamp+Codable.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/TimestampDecodingStrategy.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/TimestampEncodingStrategy.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/Transaction+WriteEncodable.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/VectorValue+Codable.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/WriteBatch+WriteEncodable.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/PropertyWrapper/FirestoreQuery.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/PropertyWrapper/FirestoreQueryObservable.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/PropertyWrapper/QueryPredicate.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/SwiftAPI/FieldValue+Swift.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/SwiftAPI/VectorValue+Swift.swift" : {
+
+  },
+  "/Users/thalytinha/Documents/guiabrecho/Pods/FirebaseFirestore/Firestore/Swift/Source/SwiftHeaderWorkaround.swift" : {
+
+  }
+}

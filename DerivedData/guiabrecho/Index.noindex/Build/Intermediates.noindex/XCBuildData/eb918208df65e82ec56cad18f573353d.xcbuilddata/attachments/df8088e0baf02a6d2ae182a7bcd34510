@@ -1,0 +1,4 @@
+module GoogleUtilities_NSData {
+umbrella "/Users/thalytinha/Library/Developer/Xcode/DerivedData/guiabrecho-clnlanshpmccxwbykpgrdxylppjv/SourcePackages/checkouts/GoogleUtilities/GoogleUtilities/NSData+zlib/Public"
+export *
+}

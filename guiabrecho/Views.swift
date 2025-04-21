@@ -12,7 +12,7 @@ struct ContentView: View {
                         .font(.title)
                         .frame(maxWidth: .infinity, alignment: .center)
                 }
-                
+
                 ZStack {
                     if contentViewModel.showSplash {
                         SplashScreen()
@@ -24,7 +24,7 @@ struct ContentView: View {
                                 }
                             }
                     } else if contentViewModel.showFavorites {
-                        BrechoListView(brechos: BrechoData.all)
+                        BrechoListView(brechos: contentViewModel.favoriteItems)
                             .environmentObject(contentViewModel)
                             .navigationBarItems(trailing:
                                 NavigationLink(destination: FavoritesView()) {
@@ -32,9 +32,8 @@ struct ContentView: View {
                                         .foregroundColor(minhaCor)
                                 }
                             )
-
                     } else {
-                        BrechoListView(brechos: BrechoData.all)
+                        BrechoListView(brechos: contentViewModel.brechos)
                             .environmentObject(contentViewModel)
                             .navigationBarItems(trailing:
                                 Button(action: {
@@ -54,7 +53,7 @@ struct ContentView: View {
             .navigationBarTitle("", displayMode: .inline)
         }
     }
-    
+
     struct BrechoListView: View {
         @EnvironmentObject var contentViewModel: ContentViewModel
         var brechos: [guiabrecho]
@@ -70,7 +69,7 @@ struct ContentView: View {
             }
         }
     }
-    
+
     struct BrechoRow: View {
         @EnvironmentObject var contentViewModel: ContentViewModel
         var guiabrecho: guiabrecho
@@ -101,7 +100,7 @@ struct ContentView: View {
             VStack {
                 MapView(coordinate: guiabrecho.coordinate, title: guiabrecho.title, subtitle: guiabrecho.subtitle)
                     .frame(height: 300)
-                
+
                 VStack(alignment: .leading, spacing: 16) {
                     Text(guiabrecho.title)
                         .font(.title)
@@ -116,13 +115,13 @@ struct ContentView: View {
                 }
                 .padding()
                 .frame(maxWidth: .infinity, alignment: .leading)
-                
+
                 Spacer()
             }
             .navigationBarTitle(Text(guiabrecho.title), displayMode: .inline)
         }
     }
-    
+
     struct FavoritesView: View {
         @EnvironmentObject var contentViewModel: ContentViewModel
 
@@ -141,19 +140,21 @@ struct ContentView: View {
         var coordinate: CLLocationCoordinate2D
         var title: String
         var subtitle: String
-        
+
         func makeUIView(context: Context) -> MKMapView {
             MKMapView(frame: .zero)
         }
-        
+
         func updateUIView(_ uiView: MKMapView, context: Context) {
             let annotation = MKPointAnnotation()
             annotation.title = title
             annotation.subtitle = subtitle
             annotation.coordinate = coordinate
-            
+
+            uiView.removeAnnotations(uiView.annotations)
             uiView.addAnnotation(annotation)
             uiView.setRegion(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)), animated: true)
         }
     }
 }
+

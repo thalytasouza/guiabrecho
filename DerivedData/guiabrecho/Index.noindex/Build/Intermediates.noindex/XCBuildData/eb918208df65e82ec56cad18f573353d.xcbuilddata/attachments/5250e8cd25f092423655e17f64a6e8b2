@@ -1,0 +1,4 @@
+module FirebaseAppDistribution {
+umbrella header "/Users/thalytinha/Library/Developer/Xcode/DerivedData/guiabrecho-clnlanshpmccxwbykpgrdxylppjv/SourcePackages/checkouts/firebase-ios-sdk/FirebaseAppDistribution/Sources/Public/FirebaseAppDistribution/FirebaseAppDistribution.h"
+export *
+}
