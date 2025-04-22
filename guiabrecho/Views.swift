@@ -3,13 +3,15 @@ import MapKit
 
 struct ContentView: View {
     @EnvironmentObject var contentViewModel: ContentViewModel
-    
+
     var body: some View {
         NavigationView {
             VStack(spacing: 8) {
                 if !contentViewModel.showSplash {
                     Text("GUIA BRECHÓ")
-                        .font(.title)
+                        .font(.largeTitle.bold())
+                        .foregroundColor(minhaCor)
+                        .padding(.bottom, 8)
                         .frame(maxWidth: .infinity, alignment: .center)
                 }
 
@@ -23,32 +25,26 @@ struct ContentView: View {
                                     }
                                 }
                             }
-                    } else if contentViewModel.showFavorites {
-                        BrechoListView(brechos: contentViewModel.favoriteItems)
-                            .environmentObject(contentViewModel)
-                            .navigationBarItems(trailing:
-                                NavigationLink(destination: FavoritesView()) {
-                                    Image(systemName: "heart.fill")
-                                        .foregroundColor(minhaCor)
-                                }
-                            )
                     } else {
-                        BrechoListView(brechos: contentViewModel.brechos)
-                            .environmentObject(contentViewModel)
-                            .navigationBarItems(trailing:
-                                Button(action: {
-                                    print("Botão de favoritos clicado")
-                                    contentViewModel.showFavorites.toggle()
-                                }) {
+                        VStack {
+                            BrechoListView(brechos: contentViewModel.brechos)
+                                .environmentObject(contentViewModel)
+
+                            NavigationLink(destination: FavoritesView()) {
+                                HStack {
                                     Image(systemName: "heart.fill")
-                                        .foregroundColor(minhaCor)
+                                    Text("Ver favoritos")
                                 }
-                            )
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(minhaCor)
+                                .cornerRadius(12)
+                                .padding(.top, 16)
+                            }
+                        }
                     }
                 }
                 .background(Color.white)
-                .navigationBarHidden(false)
-                .navigationBarTitle("")
             }
             .navigationBarTitle("", displayMode: .inline)
         }
@@ -75,50 +71,103 @@ struct ContentView: View {
         var guiabrecho: guiabrecho
 
         var body: some View {
-            HStack {
-                VStack(alignment: .leading) {
+            HStack(spacing: 12) {
+                VStack(alignment: .leading, spacing: 4) {
                     Text(guiabrecho.title)
                         .font(.headline)
+                        .foregroundColor(minhaCor)
                     Text(guiabrecho.subtitle)
-                        .foregroundColor(.gray)
+                        .font(.subheadline)
+                        .foregroundColor(lightGray)
                 }
+
                 Spacer()
+
                 Image(systemName: contentViewModel.isFavorite(id: guiabrecho.id) ? "heart.fill" : "heart")
-                    .foregroundColor(minhaCor)
+                    .foregroundColor(pink)
+                    .padding(8)
+                    .background(Color.white)
+                    .clipShape(Circle())
+                    .shadow(color: Color.black.opacity(0.15), radius: 2, x: 0, y: 1)
                     .onTapGesture {
-                        contentViewModel.toggleFavorite(for: guiabrecho.id)
+                        withAnimation(.easeInOut(duration: 0.2)) {
+                            contentViewModel.toggleFavorite(for: guiabrecho.id)
+                        }
                     }
-                    .padding(10)
             }
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 14)
+                    .fill(Color.white)
+                    .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: 2)
+            )
+            .padding(.horizontal)
         }
     }
 
     struct BrechoDetailView: View {
         var guiabrecho: guiabrecho
-        
+        @Environment(\.presentationMode) var presentationMode
+
         var body: some View {
-            VStack {
-                MapView(coordinate: guiabrecho.coordinate, title: guiabrecho.title, subtitle: guiabrecho.subtitle)
-                    .frame(height: 300)
+            ScrollView {
+                VStack(spacing: 0) {
+                    MapView(coordinate: guiabrecho.coordinate, title: guiabrecho.title, subtitle: guiabrecho.subtitle)
+                        .frame(height: 250)
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                        .padding([.top, .horizontal])
 
-                VStack(alignment: .leading, spacing: 16) {
-                    Text(guiabrecho.title)
-                        .font(.title)
-                        .foregroundColor(minhaCor)
-                    Text(guiabrecho.subtitle)
-                        .font(.subheadline)
-                    Text(guiabrecho.description ?? "")
-                        .foregroundColor(.gray)
-                        .multilineTextAlignment(.leading)
-                    Text(guiabrecho.phoneNumber ?? "")
-                        .foregroundColor(minhaCor)
+                    VStack(alignment: .leading, spacing: 16) {
+                        Text(guiabrecho.title)
+                            .font(.title)
+                            .foregroundColor(minhaCor)
+
+                        Text(guiabrecho.subtitle)
+                            .font(.subheadline)
+                            .foregroundColor(lightGray)
+
+                        if let description = guiabrecho.description, !description.isEmpty {
+                            Text(description)
+                                .font(.body)
+                                .foregroundColor(darkGray)
+                        }
+
+                        if let phone = guiabrecho.phoneNumber, !phone.isEmpty {
+                            HStack(spacing: 8) {
+                                Image(systemName: "phone.fill")
+                                    .foregroundColor(minhaCor)
+                                Text(phone)
+                                    .foregroundColor(minhaCor)
+                            }
+                            .padding(10)
+                            .background(minhaCor.opacity(0.1))
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                        }
+                    }
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 24)
+                            .fill(Color.white)
+                            .shadow(color: Color.black.opacity(0.05), radius: 6, x: 0, y: -2)
+                    )
+                    .padding(.horizontal)
+                    .offset(y: -16)
                 }
-                .padding()
-                .frame(maxWidth: .infinity, alignment: .leading)
-
-                Spacer()
             }
-            .navigationBarTitle(Text(guiabrecho.title), displayMode: .inline)
+            .transition(.opacity.combined(with: .move(edge: .trailing)))
+            .animation(.easeInOut(duration: 0.3), value: guiabrecho.id)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "xmark")
+                            .foregroundColor(darkGray)
+                    }
+                }
+            }
+            .background(Color(.systemGroupedBackground))
         }
     }
 
@@ -157,4 +206,3 @@ struct ContentView: View {
         }
     }
 }
-

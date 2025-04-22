@@ -12,6 +12,7 @@ struct guiabrecho: Identifiable, Codable {
     var phoneNumber: String?
     var latitude: Double
     var longitude: Double
+    var city: String
 
     var coordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: latitude, longitude: longitude)

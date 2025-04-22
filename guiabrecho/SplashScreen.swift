@@ -13,8 +13,10 @@ struct SplashScreen: View {
                 .frame(width: 400, height: 400)
             
             Text("")
-                .font(.largeTitle)
-                .foregroundColor(.black)
+                .font(.largeTitle.bold())
+                .foregroundColor(minhaCor)
+                .padding(.bottom, 8)
+
         }
         .edgesIgnoringSafeArea(.all)
     }

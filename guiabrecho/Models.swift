@@ -3,17 +3,14 @@ import Firebase
 
 class ContentViewModel: ObservableObject {
     @Published var showSplash: Bool = true
-    @Published var showFavorites: Bool = false
     @Published var brechos: [guiabrecho] = []
     @Published var favorites: [String: Bool] = [:] {
         didSet {
             saveFavorites()
         }
     }
-    
-    var favoriteItems: [guiabrecho] {
-        brechos.filter { isFavorite(id: $0.id ?? "") }
-    }
+    @Published var selectedCity: String = "Todos"
+    @Published var isLoading: Bool = true
 
     private var db = Firestore.firestore()
 
@@ -21,17 +18,39 @@ class ContentViewModel: ObservableObject {
         loadFavorites()
         fetchBrechos()
     }
-    
+
+    var favoriteItems: [guiabrecho] {
+        brechos.filter { isFavorite(id: $0.id ?? "") }
+    }
+
+    var availableCities: [String] {
+        let cidades = Set(brechos.map { $0.city })
+        return ["Todos"] + cidades.sorted()
+    }
+
+    var filteredBrechos: [guiabrecho] {
+        if selectedCity == "Todos" {
+            return brechos
+        } else {
+            return brechos.filter { $0.city == selectedCity }
+        }
+    }
+
     func fetchBrechos() {
-        db.collection("brechos").getDocuments { snapshot, error in
+        isLoading = true
+        db.collection("brechos").addSnapshotListener { snapshot, error in
             if let error = error {
                 print("Erro ao buscar brechós: \(error.localizedDescription)")
+                self.isLoading = false
                 return
             }
 
-            self.brechos = snapshot?.documents.compactMap { doc -> guiabrecho? in
-                try? doc.data(as: guiabrecho.self)
-            } ?? []
+            DispatchQueue.main.async {
+                self.brechos = snapshot?.documents.compactMap { doc in
+                    try? doc.data(as: guiabrecho.self)
+                } ?? []
+                self.isLoading = false
+            }
         }
     }
 
@@ -44,12 +63,12 @@ class ContentViewModel: ObservableObject {
         guard let id = id else { return false }
         return favorites[id] ?? false
     }
-    
+
     private func saveFavorites() {
         let data = try? JSONEncoder().encode(favorites)
         UserDefaults.standard.set(data, forKey: "favorites")
     }
-    
+
     private func loadFavorites() {
         if let data = UserDefaults.standard.data(forKey: "favorites"),
            let savedFavorites = try? JSONDecoder().decode([String: Bool].self, from: data) {
@@ -57,4 +76,3 @@ class ContentViewModel: ObservableObject {
         }
     }
 }
-
