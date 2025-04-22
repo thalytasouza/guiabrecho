@@ -112,10 +112,14 @@ struct ContentView: View {
         var body: some View {
             ScrollView {
                 VStack(spacing: 0) {
-                    MapView(coordinate: guiabrecho.coordinate, title: guiabrecho.title, subtitle: guiabrecho.subtitle)
-                        .frame(height: 250)
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
-                        .padding([.top, .horizontal])
+                    MapView(
+                        coordinate: guiabrecho.coordinate,
+                        title: guiabrecho.title,
+                        subtitle: guiabrecho.subtitle
+                    )
+                    .frame(height: 250)
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                    .padding([.top, .horizontal])
 
                     VStack(alignment: .leading, spacing: 16) {
                         Text(guiabrecho.title)
@@ -151,7 +155,7 @@ struct ContentView: View {
                             .shadow(color: Color.black.opacity(0.05), radius: 6, x: 0, y: -2)
                     )
                     .padding(.horizontal)
-                    .offset(y: -16)
+                    .padding(.top, 16)
                 }
             }
             .transition(.opacity.combined(with: .move(edge: .trailing)))
@@ -170,7 +174,6 @@ struct ContentView: View {
             .background(Color(.systemGroupedBackground))
         }
     }
-
     struct FavoritesView: View {
         @EnvironmentObject var contentViewModel: ContentViewModel
 
